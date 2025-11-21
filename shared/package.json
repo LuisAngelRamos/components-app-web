@@ -1,0 +1,24 @@
+{
+  "name": "@components-app/shared",
+  "version": "1.0.0",
+  "description": "Componentes compartidos de React Native reutilizables para web y mobile",
+  "main": "index.js",
+  "files": [
+    "components",
+    "index.js",
+    "README.md"
+  ],
+  "keywords": [
+    "react-native",
+    "components",
+    "shared",
+    "ui"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-native": "^0.70.0"
+  }
+}
+

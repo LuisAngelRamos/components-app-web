@@ -1,0 +1,27 @@
+# Archivos de desarrollo
+node_modules/
+*.log
+.DS_Store
+
+# Tests
+__tests__/
+*.test.js
+*.test.jsx
+*.spec.js
+*.spec.jsx
+
+# Configuración
+.eslintrc*
+.prettierrc*
+.editorconfig
+
+# Git
+.git/
+.gitignore
+
+# Otros
+.vscode/
+.idea/
+*.swp
+*.swo
+
