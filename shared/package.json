@@ -19,6 +19,8 @@
   "peerDependencies": {
     "react": "^18.0.0",
     "react-native": "^0.70.0"
+  },
+  "dependencies": {
+    "styled-components": "^6.1.19"
   }
 }
-

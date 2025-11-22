@@ -8,14 +8,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@components-app/shared": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-native-web": "^0.19.9",
-    "@components-app/shared": "*"
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",
     "vite": "^5.0.8"
   }
 }
-

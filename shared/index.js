@@ -1,7 +1,7 @@
 // Exportar todos los componentes compartidos
-export { default as Button } from './components/Button';
-export { default as Card } from './components/Card';
-export { default as CardFlight } from './components/CardFlight';
-export { default as Input } from './components/Input';
-export { default as Text } from './components/Text';
+export { default as Button } from './components/Button/Button.component';
+export { default as Card } from './components/Card/Card.component';
+export { default as CardFlight } from './components/CardFlight/CardFlight.component';
+export { default as Input } from './components/Input/Input.component';
+export { default as Text } from './components/Text/Text.component';
 

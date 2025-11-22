@@ -1,20 +1,6 @@
-import React from 'react';
-import { Text as RNText, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
-const Text = ({ 
-  children, 
-  variant = 'body', 
-  style,
-  ...props 
-}) => {
-  return (
-    <RNText style={[styles.base, styles[variant], style]} {...props}>
-      {children}
-    </RNText>
-  );
-};
-
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   base: {
     color: '#000000',
   },
@@ -42,6 +28,4 @@ const styles = StyleSheet.create({
     color: '#666666',
   },
 });
-
-export default Text;
 

@@ -1,0 +1,57 @@
+# Reglas del Proyecto ComponentsAppWeb
+
+## Estructura de Componentes
+
+- **Cada componente debe vivir en su propia carpeta con el mismo nombre que su archivo JSX**
+- **Los archivos JSX de componentes deben usar la extensión `.component.jsx`**
+- La estructura debe ser: `shared/components/ComponentName/ComponentName.component.jsx`
+- Ejemplo: `shared/components/Button/Button.component.jsx`, `shared/components/CardFlight/CardFlight.component.jsx`
+
+### Reglas específicas:
+1. Al crear un nuevo componente, siempre crear primero la carpeta con el nombre del componente
+2. El archivo JSX debe tener el mismo nombre que la carpeta con la extensión `.component.jsx`
+3. Las importaciones de otros componentes deben usar rutas relativas: `../ComponentName/ComponentName.component`
+4. Las exportaciones en `shared/index.js` deben apuntar a: `./components/ComponentName/ComponentName.component`
+
+### Ejemplo de estructura correcta:
+```
+shared/components/
+├── Button/
+│   └── Button.component.jsx
+├── Card/
+│   └── Card.component.jsx
+├── CardFlight/
+│   └── CardFlight.component.jsx
+├── Input/
+│   └── Input.component.jsx
+└── Text/
+    └── Text.component.jsx
+```
+
+## Convenciones de Código
+
+- **Los componentes React deben usar extensión `.component.jsx`**, nunca `.js` o `.jsx` simple cuando son componentes
+- **Archivos con JSX que no son componentes** pueden usar `.jsx` si es necesario
+- Los componentes deben usar solo APIs de React Native para compatibilidad web y mobile
+- Usar `peerDependencies` para `react` y `react-native`, no `dependencies`
+- Nunca ejecutar `npm install` dentro de scripts `prepare` para evitar bucles infinitos
+
+## Estilos con StyleSheet
+
+- **Los estilos deben estar en archivos separados con extensión `.styles.jsx`**
+- El archivo de estilos debe estar en la misma carpeta que el componente
+- Usar `StyleSheet.create` de React Native para los estilos
+- Estructura: `shared/components/ComponentName/ComponentName.styles.jsx`
+- Ejemplo: `shared/components/Button/Button.styles.jsx`
+
+### Reglas de Estilos:
+1. Usar `StyleSheet.create` de React Native para crear los estilos
+2. Exportar los estilos desde el archivo `.styles.jsx` usando `export const styles = StyleSheet.create({...})`
+3. Importar los estilos en el archivo `.component.jsx` con `import { styles } from './ComponentName.styles'`
+4. Los estilos dinámicos se manejan con arrays de estilos y props inline cuando es necesario
+
+## Gestión de Paquetes
+
+- Este proyecto usa **Yarn** como gestor de paquetes principal
+- No mezclar `package-lock.json` (npm) con `yarn.lock` (yarn)
+
