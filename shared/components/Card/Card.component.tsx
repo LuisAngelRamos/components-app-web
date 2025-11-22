@@ -1,11 +1,7 @@
 import React from 'react';
-import { View, ViewStyle, StyleProp } from 'react-native';
+import { View } from 'react-native';
 import { styles } from './Card.styles';
-
-interface CardProps {
-  children: React.ReactNode;
-  style?: StyleProp<ViewStyle>;
-}
+import { CardProps } from './Card.model';
 
 const Card: React.FC<CardProps> = ({ 
   children, 

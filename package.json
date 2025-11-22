@@ -1,7 +1,7 @@
 {
   "name": "components-app-web",
   "version": "1.0.0",
-  "main": "shared/index.js",
+  "main": "shared/index.ts",
   "description": "Componentes reutilizables para React Native y Web",
   "private": true,
   "workspaces": [

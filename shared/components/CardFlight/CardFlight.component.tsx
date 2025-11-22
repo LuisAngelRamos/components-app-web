@@ -1,46 +1,8 @@
 import React from 'react';
-import { View, TouchableOpacity, ViewStyle, StyleProp } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import Text from '../Text/Text.component';
 import { styles } from './CardFlight.styles';
-
-interface CardFlightProps {
-  // Información del vuelo
-  flightNumber: string;
-  status?: string;
-  statusLabel?: string;
-  
-  // Origen
-  originCity: string;
-  originTime: string;
-  originAirport: string;
-  originTerminal?: string;
-  
-  // Destino
-  destinationCity: string;
-  destinationTime: string;
-  destinationAirport: string;
-  
-  // Duración
-  duration?: string;
-  
-  // Acciones
-  onAddToWatchlist?: () => void;
-  onViewDetails?: () => void;
-  
-  // Personalización
-  backgroundColor?: string;
-  textColor?: string;
-  statusBackgroundColor?: string;
-  accentColor?: string;
-  
-  // Footer personalizado
-  showFooter?: boolean;
-  addToWatchlistLabel?: string;
-  detailsLabel?: string;
-  
-  // Estilos personalizados
-  style?: StyleProp<ViewStyle>;
-}
+import { CardFlightProps } from './CardFlight.model';
 
 const CardFlight: React.FC<CardFlightProps> = ({
   flightNumber,

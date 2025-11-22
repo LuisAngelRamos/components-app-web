@@ -18,18 +18,23 @@
 shared/components/
 ├── Button/
 │   ├── Button.component.tsx
+│   ├── Button.model.ts
 │   └── Button.styles.tsx
 ├── Card/
 │   ├── Card.component.tsx
+│   ├── Card.model.ts
 │   └── Card.styles.tsx
 ├── CardFlight/
 │   ├── CardFlight.component.tsx
+│   ├── CardFlight.model.ts
 │   └── CardFlight.styles.tsx
 ├── Input/
 │   ├── Input.component.tsx
+│   ├── Input.model.ts
 │   └── Input.styles.tsx
 └── Text/
     ├── Text.component.tsx
+    ├── Text.model.ts
     └── Text.styles.tsx
 ```
 
@@ -62,15 +67,27 @@ shared/components/
 - **Este proyecto usa TypeScript para todos los componentes**
 - Los archivos de componentes deben usar `.component.tsx`
 - Los archivos de estilos deben usar `.styles.tsx`
+- **Los archivos con interfaces y tipos deben usar `.model.ts`**
 - Los archivos de configuración pueden usar `.ts` (ej: `index.ts`, `vite.config.ts`)
 - Todos los componentes deben tener interfaces TypeScript para sus props
 - Usar tipos de React Native: `ViewStyle`, `TextStyle`, `StyleProp`, etc.
 
 ### Reglas de TypeScript:
-1. Definir interfaces para todas las props de componentes
-2. Usar `React.FC<PropsInterface>` para componentes funcionales
-3. Usar tipos de React Native para estilos: `StyleProp<ViewStyle>`, `StyleProp<TextStyle>`
-4. Exportar tipos cuando sean reutilizables
+1. **Interfaces y tipos en archivos `.model.ts`**: Todas las interfaces y tipos de componentes deben estar en archivos separados con extensión `.model.ts`
+2. Estructura: `shared/components/ComponentName/ComponentName.model.ts`
+3. Ejemplo: `shared/components/Button/Button.model.ts`, `shared/components/CardFlight/CardFlight.model.ts`
+4. Importar las interfaces en el componente: `import { ComponentProps } from './Component.model'`
+5. Usar `React.FC<PropsInterface>` para componentes funcionales
+6. Usar tipos de React Native para estilos: `StyleProp<ViewStyle>`, `StyleProp<TextStyle>`
+7. Exportar tipos cuando sean reutilizables
+
+### Estructura de archivos de modelo:
+```
+ComponentName/
+├── ComponentName.component.tsx  (lógica del componente)
+├── ComponentName.model.ts       (interfaces y tipos)
+└── ComponentName.styles.tsx     (estilos)
+```
 
 ## Gestión de Paquetes
 
