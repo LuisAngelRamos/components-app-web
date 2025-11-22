@@ -1,9 +1,20 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, ViewStyle, TextStyle, StyleProp } from 'react-native';
 import Text from '../Text/Text.component';
 import { styles } from './Button.styles';
 
-const Button = ({ 
+type ButtonVariant = 'primary' | 'secondary' | 'outline';
+
+interface ButtonProps {
+  title: string;
+  onPress: () => void;
+  variant?: ButtonVariant;
+  disabled?: boolean;
+  style?: StyleProp<ViewStyle>;
+  textStyle?: StyleProp<TextStyle>;
+}
+
+const Button: React.FC<ButtonProps> = ({ 
   title, 
   onPress, 
   variant = 'primary', 

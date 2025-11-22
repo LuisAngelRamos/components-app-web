@@ -13,15 +13,18 @@
     "web": "cd web && npm start",
     "build:web": "cd web && npm run build",
     "mobile": "cd mobile && npm start",
-    "lint": "eslint \"shared/**/*.{js,jsx}\" \"web/src/**/*.{js,jsx}\"",
-    "lint:fix": "eslint \"shared/**/*.{js,jsx}\" \"web/src/**/*.{js,jsx}\" --fix",
+    "lint": "eslint \"shared/**/*.{ts,tsx}\" \"web/src/**/*.{ts,tsx}\"",
+    "lint:fix": "eslint \"shared/**/*.{ts,tsx}\" \"web/src/**/*.{ts,tsx}\" --fix",
     "link:shared": "cd shared && npm link",
     "unlink:shared": "cd shared && npm unlink"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
+    "@typescript-eslint/eslint-plugin": "^8.47.0",
+    "@typescript-eslint/parser": "^8.47.0",
     "eslint": "^8.57.1",
-    "eslint-plugin-react": "^7.37.5"
+    "eslint-plugin-react": "^7.37.5",
+    "typescript": "^5.9.3"
   }
 }

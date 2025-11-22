@@ -1,44 +1,68 @@
 import React from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity, ViewStyle, StyleProp } from 'react-native';
 import Text from '../Text/Text.component';
 import { styles } from './CardFlight.styles';
 
-const CardFlight = ({
+interface CardFlightProps {
   // Información del vuelo
+  flightNumber: string;
+  status?: string;
+  statusLabel?: string;
+  
+  // Origen
+  originCity: string;
+  originTime: string;
+  originAirport: string;
+  originTerminal?: string;
+  
+  // Destino
+  destinationCity: string;
+  destinationTime: string;
+  destinationAirport: string;
+  
+  // Duración
+  duration?: string;
+  
+  // Acciones
+  onAddToWatchlist?: () => void;
+  onViewDetails?: () => void;
+  
+  // Personalización
+  backgroundColor?: string;
+  textColor?: string;
+  statusBackgroundColor?: string;
+  accentColor?: string;
+  
+  // Footer personalizado
+  showFooter?: boolean;
+  addToWatchlistLabel?: string;
+  detailsLabel?: string;
+  
+  // Estilos personalizados
+  style?: StyleProp<ViewStyle>;
+}
+
+const CardFlight: React.FC<CardFlightProps> = ({
   flightNumber,
   status,
   statusLabel,
-  
-  // Origen
   originCity,
   originTime,
   originAirport,
   originTerminal,
-  
-  // Destino
   destinationCity,
   destinationTime,
   destinationAirport,
-  
-  // Duración
   duration,
-  
-  // Acciones
   onAddToWatchlist,
   onViewDetails,
-  
-  // Personalización
   backgroundColor = '#1A1F3A',
   textColor = '#FFFFFF',
   statusBackgroundColor = '#4A5568',
   accentColor = '#FFFFFF',
-  
-  // Footer personalizado
   showFooter = true,
   addToWatchlistLabel = 'Add to Watchlist',
   detailsLabel = 'Details',
-  
-  // Estilos personalizados
   style,
 }) => {
   return (
@@ -141,3 +165,4 @@ const CardFlight = ({
 };
 
 export default CardFlight;
+

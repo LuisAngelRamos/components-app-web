@@ -2,53 +2,75 @@
 
 ## Estructura de Componentes
 
-- **Cada componente debe vivir en su propia carpeta con el mismo nombre que su archivo JSX**
-- **Los archivos JSX de componentes deben usar la extensión `.component.jsx`**
-- La estructura debe ser: `shared/components/ComponentName/ComponentName.component.jsx`
-- Ejemplo: `shared/components/Button/Button.component.jsx`, `shared/components/CardFlight/CardFlight.component.jsx`
+- **Cada componente debe vivir en su propia carpeta con el mismo nombre que su archivo**
+- **Los archivos de componentes deben usar la extensión `.component.tsx` (TypeScript)**
+- La estructura debe ser: `shared/components/ComponentName/ComponentName.component.tsx`
+- Ejemplo: `shared/components/Button/Button.component.tsx`, `shared/components/CardFlight/CardFlight.component.tsx`
 
 ### Reglas específicas:
 1. Al crear un nuevo componente, siempre crear primero la carpeta con el nombre del componente
-2. El archivo JSX debe tener el mismo nombre que la carpeta con la extensión `.component.jsx`
+2. El archivo debe tener el mismo nombre que la carpeta con la extensión `.component.tsx`
 3. Las importaciones de otros componentes deben usar rutas relativas: `../ComponentName/ComponentName.component`
-4. Las exportaciones en `shared/index.js` deben apuntar a: `./components/ComponentName/ComponentName.component`
+4. Las exportaciones en `shared/index.ts` deben apuntar a: `./components/ComponentName/ComponentName.component`
 
 ### Ejemplo de estructura correcta:
 ```
 shared/components/
 ├── Button/
-│   └── Button.component.jsx
+│   ├── Button.component.tsx
+│   └── Button.styles.tsx
 ├── Card/
-│   └── Card.component.jsx
+│   ├── Card.component.tsx
+│   └── Card.styles.tsx
 ├── CardFlight/
-│   └── CardFlight.component.jsx
+│   ├── CardFlight.component.tsx
+│   └── CardFlight.styles.tsx
 ├── Input/
-│   └── Input.component.jsx
+│   ├── Input.component.tsx
+│   └── Input.styles.tsx
 └── Text/
-    └── Text.component.jsx
+    ├── Text.component.tsx
+    └── Text.styles.tsx
 ```
 
 ## Convenciones de Código
 
-- **Los componentes React deben usar extensión `.component.jsx`**, nunca `.js` o `.jsx` simple cuando son componentes
-- **Archivos con JSX que no son componentes** pueden usar `.jsx` si es necesario
+- **Este proyecto usa TypeScript**
+- **Los componentes React deben usar extensión `.component.tsx`**, nunca `.js`, `.jsx` o `.ts` simple cuando son componentes
+- **Archivos con JSX que no son componentes** pueden usar `.tsx` si es necesario
+- **Todos los componentes deben tener tipos TypeScript definidos con interfaces**
 - Los componentes deben usar solo APIs de React Native para compatibilidad web y mobile
 - Usar `peerDependencies` para `react` y `react-native`, no `dependencies`
 - Nunca ejecutar `npm install` dentro de scripts `prepare` para evitar bucles infinitos
 
 ## Estilos con StyleSheet
 
-- **Los estilos deben estar en archivos separados con extensión `.styles.jsx`**
+- **Los estilos deben estar en archivos separados con extensión `.styles.tsx`**
 - El archivo de estilos debe estar en la misma carpeta que el componente
 - Usar `StyleSheet.create` de React Native para los estilos
-- Estructura: `shared/components/ComponentName/ComponentName.styles.jsx`
-- Ejemplo: `shared/components/Button/Button.styles.jsx`
+- Estructura: `shared/components/ComponentName/ComponentName.styles.tsx`
+- Ejemplo: `shared/components/Button/Button.styles.tsx`
 
 ### Reglas de Estilos:
 1. Usar `StyleSheet.create` de React Native para crear los estilos
-2. Exportar los estilos desde el archivo `.styles.jsx` usando `export const styles = StyleSheet.create({...})`
-3. Importar los estilos en el archivo `.component.jsx` con `import { styles } from './ComponentName.styles'`
+2. Exportar los estilos desde el archivo `.styles.tsx` usando `export const styles = StyleSheet.create({...})`
+3. Importar los estilos en el archivo `.component.tsx` con `import { styles } from './ComponentName.styles'`
 4. Los estilos dinámicos se manejan con arrays de estilos y props inline cuando es necesario
+
+## TypeScript
+
+- **Este proyecto usa TypeScript para todos los componentes**
+- Los archivos de componentes deben usar `.component.tsx`
+- Los archivos de estilos deben usar `.styles.tsx`
+- Los archivos de configuración pueden usar `.ts` (ej: `index.ts`, `vite.config.ts`)
+- Todos los componentes deben tener interfaces TypeScript para sus props
+- Usar tipos de React Native: `ViewStyle`, `TextStyle`, `StyleProp`, etc.
+
+### Reglas de TypeScript:
+1. Definir interfaces para todas las props de componentes
+2. Usar `React.FC<PropsInterface>` para componentes funcionales
+3. Usar tipos de React Native para estilos: `StyleProp<ViewStyle>`, `StyleProp<TextStyle>`
+4. Exportar tipos cuando sean reutilizables
 
 ## Gestión de Paquetes
 

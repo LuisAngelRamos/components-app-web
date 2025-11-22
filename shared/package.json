@@ -2,10 +2,10 @@
   "name": "@components-app/shared",
   "version": "1.0.0",
   "description": "Componentes compartidos de React Native reutilizables para web y mobile",
-  "main": "index.js",
+  "main": "index.ts",
   "files": [
     "components",
-    "index.js",
+    "index.ts",
     "README.md"
   ],
   "keywords": [
@@ -22,5 +22,10 @@
   },
   "dependencies": {
     "styled-components": "^6.1.19"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.6",
+    "@types/react-native": "^0.73.0",
+    "typescript": "^5.9.3"
   }
 }

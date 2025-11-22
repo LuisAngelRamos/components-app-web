@@ -1,9 +1,15 @@
 import React from 'react';
-import { TextInput, View } from 'react-native';
+import { TextInput, View, ViewStyle, TextInputProps, StyleProp } from 'react-native';
 import Text from '../Text/Text.component';
 import { styles } from './Input.styles';
 
-const Input = ({ 
+interface InputProps extends Omit<TextInputProps, 'style'> {
+  label?: string;
+  error?: string;
+  style?: StyleProp<ViewStyle>;
+}
+
+const Input: React.FC<InputProps> = ({ 
   label,
   placeholder,
   value,
