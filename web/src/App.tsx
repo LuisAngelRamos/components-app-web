@@ -92,8 +92,9 @@ function App() {
         <Text variant="h2" style={styles.cardFlightTitle}>Tarjeta de Vuelo</Text>
         <CardFlight
           flightNumber="AM 500"
-          status="Landed"
-          statusLabel="Landed"
+          status="On Time"
+          statusLabel="On Time"
+          statusCategory="onTime"
           originCity="Mexico City"
           originTime="04:20a"
           originAirport="MEX"

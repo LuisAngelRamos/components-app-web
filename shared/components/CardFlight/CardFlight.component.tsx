@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import Text from '../Text/Text.component';
+import StatusBadge from '../StatusBadge/StatusBadge.component';
 import { styles } from './CardFlight.styles';
 import { CardFlightProps } from './CardFlight.model';
 
@@ -8,6 +9,7 @@ const CardFlight: React.FC<CardFlightProps> = ({
   flightNumber,
   status,
   statusLabel,
+  statusCategory = 'onTime',
   originCity,
   originTime,
   originAirport,
@@ -20,7 +22,6 @@ const CardFlight: React.FC<CardFlightProps> = ({
   onViewDetails,
   backgroundColor = '#1A1F3A',
   textColor = '#FFFFFF',
-  statusBackgroundColor = '#4A5568',
   accentColor = '#FFFFFF',
   showFooter = true,
   addToWatchlistLabel = 'Add to Watchlist',
@@ -39,11 +40,10 @@ const CardFlight: React.FC<CardFlightProps> = ({
           </Text>
         </View>
         {status && (
-          <View style={[styles.statusBadge, { backgroundColor: statusBackgroundColor }]}>
-            <Text style={[styles.statusText, { color: textColor }]}>
-              {statusLabel || status}
-            </Text>
-          </View>
+          <StatusBadge
+            label={statusLabel || status}
+            category={statusCategory}
+          />
         )}
       </View>
 
