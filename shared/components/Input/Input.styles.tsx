@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { colorTokens } from '../../design-system';
 
 export const styles = StyleSheet.create({
   container: {
@@ -17,7 +18,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 12,
     fontSize: 16,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: colorTokens.Background_Primary,
     minHeight: 44,
   },
   inputError: {
@@ -29,4 +30,3 @@ export const styles = StyleSheet.create({
     marginTop: 4,
   },
 });
-

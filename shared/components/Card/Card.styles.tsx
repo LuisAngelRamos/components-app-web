@@ -1,8 +1,9 @@
 import { StyleSheet } from 'react-native';
+import { colorTokens } from '../../design-system';
 
 export const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: colorTokens.Background_Primary,
     borderRadius: 12,
     padding: 16,
     shadowColor: '#000',
@@ -16,4 +17,3 @@ export const styles = StyleSheet.create({
     marginVertical: 8,
   },
 });
-

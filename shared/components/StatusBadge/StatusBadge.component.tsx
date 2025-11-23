@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import Text from '../Text/Text.component';
+import { getHelperColor, colorTokens } from '../../design-system';
 import { styles } from './StatusBadge.styles';
 import { StatusBadgeProps, StatusBadgeCategory } from './StatusBadge.model';
 
@@ -9,23 +10,23 @@ const getCategoryColors = (category: StatusBadgeCategory): { backgroundColor: st
     case 'delayed':
     case 'early':
       return {
-        backgroundColor: '#FFD700',
-        textColor: '#FFFFFF',
+        backgroundColor: getHelperColor('warning', 'primary'),
+        textColor: colorTokens.Text_White,
       };
     case 'onTime':
       return {
-        backgroundColor: '#10B981',
-        textColor: '#FFFFFF',
+        backgroundColor: getHelperColor('successBadge', 'primary'),
+        textColor: colorTokens.Text_White,
       };
     case 'canceled':
       return {
-        backgroundColor: '#EF4444',
-        textColor: '#FFFFFF',
+        backgroundColor: getHelperColor('alertBadge', 'primary'),
+        textColor: colorTokens.Text_White,
       };
     default:
       return {
-        backgroundColor: '#4A5568',
-        textColor: '#FFFFFF',
+        backgroundColor: getHelperColor('neutral', 'secondary'),
+        textColor: colorTokens.Text_White,
       };
   }
 };

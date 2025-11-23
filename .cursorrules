@@ -71,6 +71,7 @@ shared/components/
 - Los archivos de configuración pueden usar `.ts` (ej: `index.ts`, `vite.config.ts`)
 - Todos los componentes deben tener interfaces TypeScript para sus props
 - Usar tipos de React Native: `ViewStyle`, `TextStyle`, `StyleProp`, etc.
+- **NUNCA usar `as const`**: Siempre usar tipado explícito con interfaces o tipos
 
 ### Reglas de TypeScript:
 1. **Interfaces y tipos en archivos `.model.ts`**: Todas las interfaces y tipos de componentes deben estar en archivos separados con extensión `.model.ts`
@@ -80,6 +81,17 @@ shared/components/
 5. Usar `React.FC<PropsInterface>` para componentes funcionales
 6. Usar tipos de React Native para estilos: `StyleProp<ViewStyle>`, `StyleProp<TextStyle>`
 7. Exportar tipos cuando sean reutilizables
+8. **Tipado explícito**: Siempre definir interfaces o tipos para objetos, arrays y constantes. NO usar `as const`. Ejemplo:
+   ```typescript
+   // ❌ INCORRECTO
+   export const colorTokens = { Red_90h: '#D32F2F' } as const;
+   
+   // ✅ CORRECTO
+   export interface ColorTokens {
+     Red_90h: string;
+   }
+   export const colorTokens: ColorTokens = { Red_90h: '#D32F2F' };
+   ```
 
 ### Estructura de archivos de modelo:
 ```

@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { colorTokens } from '../../design-system';
 
 export const styles = StyleSheet.create({
   button: {
@@ -27,9 +28,8 @@ export const styles = StyleSheet.create({
     opacity: 0.5,
   },
   buttonText: {
-    color: '#FFFFFF',
+    color: colorTokens.Text_White,
     fontSize: 16,
     fontWeight: '600',
   },
 });
-

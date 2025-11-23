@@ -2,6 +2,7 @@ import React from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import Text from '../Text/Text.component';
 import StatusBadge from '../StatusBadge/StatusBadge.component';
+import { colorTokens } from '../../design-system';
 import { styles } from './CardFlight.styles';
 import { CardFlightProps } from './CardFlight.model';
 
@@ -20,9 +21,9 @@ const CardFlight: React.FC<CardFlightProps> = ({
   duration,
   onAddToWatchlist,
   onViewDetails,
-  backgroundColor = '#1A1F3A',
-  textColor = '#FFFFFF',
-  accentColor = '#FFFFFF',
+  backgroundColor = colorTokens.Text_Primary,
+  textColor = colorTokens.Text_White,
+  accentColor = colorTokens.Text_White,
   showFooter = true,
   addToWatchlistLabel = 'Add to Watchlist',
   detailsLabel = 'Details',

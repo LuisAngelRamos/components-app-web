@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { colorTokens } from '../../design-system';
 
 export const styles = StyleSheet.create({
   base: {
@@ -25,7 +26,6 @@ export const styles = StyleSheet.create({
   },
   caption: {
     fontSize: 12,
-    color: '#666666',
+    color: colorTokens.Text_Secondary,
   },
 });
-
