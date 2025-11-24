@@ -1,3 +1,8 @@
+# Archivos fuente TypeScript
+*.ts
+*.tsx
+!dist/**/*.d.ts
+
 # Archivos de desarrollo
 node_modules/
 *.log
@@ -7,13 +12,19 @@ node_modules/
 __tests__/
 *.test.js
 *.test.jsx
+*.test.ts
+*.test.tsx
 *.spec.js
 *.spec.jsx
+*.spec.ts
+*.spec.tsx
 
 # Configuración
 .eslintrc*
 .prettierrc*
 .editorconfig
+tsconfig.json
+tsconfig.esm.json
 
 # Git
 .git/
@@ -25,3 +36,8 @@ __tests__/
 *.swp
 *.swo
 
+# Solo mantener archivos compilados y documentación
+components/
+design-system/
+utils/
+index.ts

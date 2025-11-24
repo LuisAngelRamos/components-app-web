@@ -10,7 +10,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "strict": true,
-    "noEmit": true,
+    "noEmit": false,
     "isolatedModules": true,
     "declaration": true,
     "declarationMap": true,
@@ -23,6 +23,7 @@
   },
   "include": [
     "components/**/*",
+    "design-system/**/*",
     "index.ts"
   ],
   "exclude": [
@@ -30,4 +31,3 @@
     "dist"
   ]
 }
-

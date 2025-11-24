@@ -1,0 +1,6 @@
+# Mantener dist/ fuera de gitignore para instalación desde Git
+# Los archivos compilados deben estar disponibles cuando se instala desde GitHub
+
+node_modules/
+.DS_Store
+*.log
