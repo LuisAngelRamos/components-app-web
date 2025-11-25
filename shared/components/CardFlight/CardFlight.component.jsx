@@ -4,9 +4,8 @@ import Text from '../Text/Text.component';
 import StatusBadge from '../StatusBadge/StatusBadge.component';
 import { colorTokens } from '../../design-system';
 import { styles } from './CardFlight.styles';
-import { CardFlightProps } from './CardFlight.model';
 
-const CardFlight: React.FC<CardFlightProps> = ({
+const CardFlight = ({
   flightNumber,
   status,
   statusLabel,

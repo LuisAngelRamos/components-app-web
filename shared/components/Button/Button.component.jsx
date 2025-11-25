@@ -2,9 +2,8 @@ import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import Text from '../Text/Text.component';
 import { styles } from './Button.styles';
-import { ButtonProps } from './Button.model';
 
-const Button: React.FC<ButtonProps> = ({ 
+const Button = ({ 
   title, 
   onPress, 
   variant = 'primary', 

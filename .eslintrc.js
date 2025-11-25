@@ -8,9 +8,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
   ],
-  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
@@ -18,32 +16,30 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react'],
   settings: {
     react: {
       version: 'detect',
     },
   },
   rules: {
-    // Prohibir JSX en archivos .js - debe usar .tsx
+    // Permitir JSX solo en archivos .jsx
     'react/jsx-filename-extension': [
       'error',
       {
-        extensions: ['.tsx'], // Solo permitir JSX en archivos .tsx
+        extensions: ['.jsx'], // Solo permitir JSX en archivos .jsx
       },
     ],
     // Otras reglas útiles
     'react/react-in-jsx-scope': 'off', // No necesario en React 17+
-    'react/prop-types': 'off', // Usamos TypeScript para tipos
-    '@typescript-eslint/explicit-module-boundary-types': 'off', // Opcional
-    '@typescript-eslint/no-explicit-any': 'warn', // Advertir sobre any
+    'react/prop-types': 'warn', // Advertir sobre props sin validación
   },
   overrides: [
     {
-      // Reglas específicas para archivos .ts (sin JSX)
-      files: ['**/*.ts'],
+      // Reglas específicas para archivos .js (sin JSX)
+      files: ['**/*.js'],
       rules: {
-        'react/jsx-filename-extension': ['error', { extensions: [] }], // Prohibir JSX en .ts
+        'react/jsx-filename-extension': ['error', { extensions: [] }], // Prohibir JSX en .js
       },
     },
   ],

@@ -2,9 +2,8 @@ import React from 'react';
 import { TextInput, View } from 'react-native';
 import Text from '../Text/Text.component';
 import { styles } from './Input.styles';
-import { InputProps } from './Input.model';
 
-const Input: React.FC<InputProps> = ({ 
+const Input = ({ 
   label,
   placeholder,
   value,

@@ -3,106 +3,67 @@
 ## Estructura de Componentes
 
 - **Cada componente debe vivir en su propia carpeta con el mismo nombre que su archivo**
-- **Los archivos de componentes deben usar la extensión `.component.tsx` (TypeScript)**
-- La estructura debe ser: `shared/components/ComponentName/ComponentName.component.tsx`
-- Ejemplo: `shared/components/Button/Button.component.tsx`, `shared/components/CardFlight/CardFlight.component.tsx`
+- **Los archivos de componentes deben usar la extensión `.component.jsx`**
+- La estructura debe ser: `shared/components/ComponentName/ComponentName.component.jsx`
+- Ejemplo: `shared/components/Button/Button.component.jsx`, `shared/components/CardFlight/CardFlight.component.jsx`
 
 ### Reglas específicas:
 1. Al crear un nuevo componente, siempre crear primero la carpeta con el nombre del componente
-2. El archivo debe tener el mismo nombre que la carpeta con la extensión `.component.tsx`
+2. El archivo debe tener el mismo nombre que la carpeta con la extensión `.component.jsx`
 3. Las importaciones de otros componentes deben usar rutas relativas: `../ComponentName/ComponentName.component`
-4. Las exportaciones en `shared/index.ts` deben apuntar a: `./components/ComponentName/ComponentName.component`
+4. Las exportaciones en `shared/index.jsx` deben apuntar a: `./components/ComponentName/ComponentName.component`
 
 ### Ejemplo de estructura correcta:
 ```
 shared/components/
 ├── Button/
-│   ├── Button.component.tsx
-│   ├── Button.model.ts
-│   └── Button.styles.tsx
+│   ├── Button.component.jsx
+│   └── Button.styles.jsx
 ├── Card/
-│   ├── Card.component.tsx
-│   ├── Card.model.ts
-│   └── Card.styles.tsx
+│   ├── Card.component.jsx
+│   └── Card.styles.jsx
 ├── CardFlight/
-│   ├── CardFlight.component.tsx
-│   ├── CardFlight.model.ts
-│   └── CardFlight.styles.tsx
+│   ├── CardFlight.component.jsx
+│   └── CardFlight.styles.jsx
 ├── Input/
-│   ├── Input.component.tsx
-│   ├── Input.model.ts
-│   └── Input.styles.tsx
+│   ├── Input.component.jsx
+│   └── Input.styles.jsx
 └── Text/
-    ├── Text.component.tsx
-    ├── Text.model.ts
-    └── Text.styles.tsx
+    ├── Text.component.jsx
+    └── Text.styles.jsx
 ```
 
 ## Convenciones de Código
 
-- **Este proyecto usa TypeScript**
-- **Los componentes React deben usar extensión `.component.tsx`**, nunca `.js`, `.jsx` o `.ts` simple cuando son componentes
-- **Archivos con JSX que no son componentes** pueden usar `.tsx` si es necesario
-- **Todos los componentes deben tener tipos TypeScript definidos con interfaces**
+- **Este proyecto usa JavaScript (JSX)**
+- **Los componentes React deben usar extensión `.component.jsx`**, nunca `.js` o `.ts` simple cuando son componentes
 - Los componentes deben usar solo APIs de React Native para compatibilidad web y mobile
 - Usar `peerDependencies` para `react` y `react-native`, no `dependencies`
 - Nunca ejecutar `npm install` dentro de scripts `prepare` para evitar bucles infinitos
 
 ## Estilos con StyleSheet
 
-- **Los estilos deben estar en archivos separados con extensión `.styles.tsx`**
+- **Los estilos deben estar en archivos separados con extensión `.styles.jsx`**
 - El archivo de estilos debe estar en la misma carpeta que el componente
 - Usar `StyleSheet.create` de React Native para los estilos
-- Estructura: `shared/components/ComponentName/ComponentName.styles.tsx`
-- Ejemplo: `shared/components/Button/Button.styles.tsx`
+- Estructura: `shared/components/ComponentName/ComponentName.styles.jsx`
+- Ejemplo: `shared/components/Button/Button.styles.jsx`
 
 ### Reglas de Estilos:
 1. Usar `StyleSheet.create` de React Native para crear los estilos
-2. Exportar los estilos desde el archivo `.styles.tsx` usando `export const styles = StyleSheet.create({...})`
-3. Importar los estilos en el archivo `.component.tsx` con `import { styles } from './ComponentName.styles'`
+2. Exportar los estilos desde el archivo `.styles.jsx` usando `export const styles = StyleSheet.create({...})`
+3. Importar los estilos en el archivo `.component.jsx` con `import { styles } from './ComponentName.styles'`
 4. Los estilos dinámicos se manejan con arrays de estilos y props inline cuando es necesario
 
-## TypeScript
+## JavaScript
 
-- **Este proyecto usa TypeScript para todos los componentes**
-- Los archivos de componentes deben usar `.component.tsx`
-- Los archivos de estilos deben usar `.styles.tsx`
-- **Los archivos con interfaces y tipos deben usar `.model.ts`**
-- Los archivos de configuración pueden usar `.ts` (ej: `index.ts`, `vite.config.ts`)
-- Todos los componentes deben tener interfaces TypeScript para sus props
-- Usar tipos de React Native: `ViewStyle`, `TextStyle`, `StyleProp`, etc.
-- **NUNCA usar `as const`**: Siempre usar tipado explícito con interfaces o tipos
-
-### Reglas de TypeScript:
-1. **Interfaces y tipos en archivos `.model.ts`**: Todas las interfaces y tipos de componentes deben estar en archivos separados con extensión `.model.ts`
-2. Estructura: `shared/components/ComponentName/ComponentName.model.ts`
-3. Ejemplo: `shared/components/Button/Button.model.ts`, `shared/components/CardFlight/CardFlight.model.ts`
-4. Importar las interfaces en el componente: `import { ComponentProps } from './Component.model'`
-5. Usar `React.FC<PropsInterface>` para componentes funcionales
-6. Usar tipos de React Native para estilos: `StyleProp<ViewStyle>`, `StyleProp<TextStyle>`
-7. Exportar tipos cuando sean reutilizables
-8. **Tipado explícito**: Siempre definir interfaces o tipos para objetos, arrays y constantes. NO usar `as const`. Ejemplo:
-   ```typescript
-   // ❌ INCORRECTO
-   export const colorTokens = { Red_90h: '#D32F2F' } as const;
-   
-   // ✅ CORRECTO
-   export interface ColorTokens {
-     Red_90h: string;
-   }
-   export const colorTokens: ColorTokens = { Red_90h: '#D32F2F' };
-   ```
-
-### Estructura de archivos de modelo:
-```
-ComponentName/
-├── ComponentName.component.tsx  (lógica del componente)
-├── ComponentName.model.ts       (interfaces y tipos)
-└── ComponentName.styles.tsx     (estilos)
-```
+- **Este proyecto usa JavaScript (JSX) para todos los componentes**
+- Los archivos de componentes deben usar `.component.jsx`
+- Los archivos de estilos deben usar `.styles.jsx`
+- Los archivos de configuración pueden usar `.js` (ej: `index.jsx`, `vite.config.js`)
+- Los componentes deben documentar sus props usando JSDoc cuando sea necesario
 
 ## Gestión de Paquetes
 
 - Este proyecto usa **Yarn** como gestor de paquetes principal
 - No mezclar `package-lock.json` (npm) con `yarn.lock` (yarn)
-

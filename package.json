@@ -1,7 +1,7 @@
 {
   "name": "components-app-web",
   "version": "1.0.0",
-  "main": "shared/index.ts",
+  "main": "shared/index.jsx",
   "description": "Componentes reutilizables para React Native y Web",
   "private": true,
   "workspaces": [
@@ -12,20 +12,14 @@
   "scripts": {
     "web": "cd web && npm start",
     "build:web": "cd web && npm run build",
-    "build:shared": "cd shared && npm run build",
     "mobile": "cd mobile && npm start",
-    "lint": "eslint \"shared/**/*.{ts,tsx}\" \"web/src/**/*.{ts,tsx}\"",
-    "lint:fix": "eslint \"shared/**/*.{ts,tsx}\" \"web/src/**/*.{ts,tsx}\" --fix",
+    "lint": "eslint \"shared/**/*.{js,jsx}\" \"web/src/**/*.{js,jsx}\"",
+    "lint:fix": "eslint \"shared/**/*.{js,jsx}\" \"web/src/**/*.{js,jsx}\" --fix",
     "link:shared": "cd shared && npm link",
     "unlink:shared": "cd shared && npm unlink"
   },
   "devDependencies": {
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "@typescript-eslint/eslint-plugin": "^8.47.0",
-    "@typescript-eslint/parser": "^8.47.0",
     "eslint": "^8.57.1",
-    "eslint-plugin-react": "^7.37.5",
-    "typescript": "^5.9.3"
+    "eslint-plugin-react": "^7.37.5"
   }
 }

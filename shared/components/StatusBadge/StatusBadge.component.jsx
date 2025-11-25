@@ -3,9 +3,8 @@ import { View } from 'react-native';
 import Text from '../Text/Text.component';
 import { getHelperColor, colorTokens } from '../../design-system';
 import { styles } from './StatusBadge.styles';
-import { StatusBadgeProps, StatusBadgeCategory } from './StatusBadge.model';
 
-const getCategoryColors = (category: StatusBadgeCategory): { backgroundColor: string; textColor: string } => {
+const getCategoryColors = (category) => {
   switch (category) {
     case 'delayed':
     case 'early':
@@ -31,7 +30,7 @@ const getCategoryColors = (category: StatusBadgeCategory): { backgroundColor: st
   }
 };
 
-const StatusBadge: React.FC<StatusBadgeProps> = ({
+const StatusBadge = ({
   label,
   category,
   style,
@@ -48,3 +47,4 @@ const StatusBadge: React.FC<StatusBadgeProps> = ({
 };
 
 export default StatusBadge;
+
